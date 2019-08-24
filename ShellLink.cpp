@@ -22,13 +22,7 @@ Changes:  -code has been rewritten
 #include <shlobj.h>
 
 #define xatoi
-#include "ConvFunc.h"
-
-#ifdef UNICODE
-#include "nsis_unicode\pluginapi.h"
-#else
-#include "nsis_ansi\pluginapi.h"
-#endif
+#include "nsis\pluginapi.h"
 
 #define NSISFUNC(name) extern "C" void __declspec(dllexport) name(HWND hWndParent, int string_size, TCHAR* variables, stack_t** stacktop, extra_parameters* extra)
 
