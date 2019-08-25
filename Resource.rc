@@ -71,7 +71,7 @@ BEGIN
             VALUE "FileVersion", "1.2"
             VALUE "InternalName", "ShellLink.dll"
             VALUE "LegalCopyright", "http://nsis.sourceforge.net/ShellLink_plug-in#License"
-            VALUE "LegalTrademarks", "Built by Marius Negrutiu (https://github.com/negrutiu/nsis)"
+            VALUE "LegalTrademarks", "https://github.com/negrutiu/nsis-shelllink"
            VALUE "OriginalFilename", "ShellLink.dll"
             VALUE "ProductName", "ShellLink NSIS plug-in"
             VALUE "ProductVersion", "1.2.0.0"
