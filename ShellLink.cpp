@@ -156,10 +156,10 @@ void ShortCutData(int nType)
 	IShellLink* psl;
 	IPersistFile* ppf;
 
-  int nBuf;
-  WORD wHotkey;
-  TCHAR* szBuf = (TCHAR*)LocalAlloc(LPTR, sizeof(TCHAR)*MAX_PATH);
-  TCHAR* szBuf2 = (TCHAR*)LocalAlloc(LPTR, sizeof(TCHAR)*MAX_PATH);
+	int nBuf;
+	WORD wHotkey;
+  	TCHAR* szBuf = (TCHAR*)LocalAlloc(LPTR, sizeof(TCHAR)*MAX_PATH);
+	TCHAR* szBuf2 = (TCHAR*)LocalAlloc(LPTR, sizeof(TCHAR)*MAX_PATH);
 
 	popstring(szBuf);
 	if (nType > SHELLLINKTYPE_GETWORKINGDIR) popstring(szBuf2);
@@ -173,10 +173,10 @@ void ShortCutData(int nType)
 #ifdef UNICODE
 			hRes=ppf->Load(szBuf, STGM_READWRITE);
 #else
-      WCHAR* wszPath = (WCHAR*)LocalAlloc(LPTR, sizeof(WCHAR)*MAX_PATH);
+			WCHAR* wszPath = (WCHAR*)LocalAlloc(LPTR, sizeof(WCHAR)*MAX_PATH);
 			MultiByteToWideChar(CP_ACP, 0, szBuf, -1, wszPath, MAX_PATH);
 			hRes=ppf->Load(wszPath, STGM_READWRITE);
-      LocalFree(wszPath);
+			LocalFree(wszPath);
 #endif
 			if (hRes == S_OK)
 			{
@@ -280,16 +280,16 @@ void ShortCutData(int nType)
 						}; break;
 						case SHELLLINKTYPE_SETRUNASADMIN:
 						{
-              IShellLinkDataList* pdl;
-              hRes=psl->QueryInterface(IID_IShellLinkDataList, (void**)&pdl);
-              if (hRes == S_OK)
-              {
-                DWORD dwFlags = 0;
-							  hRes=pdl->GetFlags(&dwFlags);
-                if (hRes == S_OK && (dwFlags & SLDF_RUNAS_USER) != SLDF_RUNAS_USER)
-                  hRes=pdl->SetFlags(dwFlags | SLDF_RUNAS_USER);
-                pdl->Release();
-              }
+							IShellLinkDataList* pdl;
+							hRes=psl->QueryInterface(IID_IShellLinkDataList, (void**)&pdl);
+							if (hRes == S_OK)
+							{
+								DWORD dwFlags = 0;
+								hRes=pdl->GetFlags(&dwFlags);
+								if (hRes == S_OK && (dwFlags & SLDF_RUNAS_USER) != SLDF_RUNAS_USER)
+									hRes=pdl->SetFlags(dwFlags | SLDF_RUNAS_USER);
+								pdl->Release();
+							}
 						}; break;
 					}
 					if (hRes == S_OK) hRes=ppf->Save(NULL, FALSE);

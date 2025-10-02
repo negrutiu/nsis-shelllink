@@ -1,6 +1,9 @@
-# ShellLink ([NSIS](https://github.com/negrutiu/nsis) plugin)
-It allows you to perform complex operations with shortcut files (`.lnk`)
+# ShellLink ([NSIS](https://nsis.sourceforge.net) plugin)
 
-#
-This is a clone of the original project created by **Angelo Mandato**<br>
-https://nsis.sourceforge.io/ShellLink_plug-in
+The plugin allows your installer to create, modify, and read properties of shortcut files (`.lnk`)  
+See [Readme.html](Readme.html) for documentation.
+
+--------------------------------------------------------------------------------
+
+This is a clone of the original project created by **Angelo Mandato**.  
+https://nsis.sourceforge.net/ShellLink_plug-in
